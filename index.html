@@ -21,38 +21,21 @@
       </div>
     </header>
     <main class="quiz">
-      <div class="landing">
-        <h2 class="landingtitle">Coding Quiz Challenge</h2>
-        <p class="landingtext">
-          Try to answer the following questions as quickly and correctly as
-          possible. Faster finishing times will result in a higher overall
-          score. Missed questions will subtract 10 seconds from the remaining
-          time.
-        </p>
-      </div>
-      <div class="questions"></div>
-      <div class="score">
-        <p class="scoretext">Current Score:</p>
-        <span class="scorecount"></span>
-      </div>
-      <div class="finished">
-        <h2 class="finishedtitle">All Done</h2>
-        <p class="finishedtext">
-          Please enter your initials to record your score
-        </p>
-        <input type="text" name="initials" id="initials" />
-        <input type="button" value="Submit" />
-      </div>
-      <div class="highscoreshow">
-        <h2 class="scoretitle">High Scores</h2>
-        <div class="scorearea">
-          <ul class="scorelist">
-            <li class="scoreitem"></li>
-          </ul>
-          <button class="clearscores">Clear Scores</button>
-          <button class="goback">Go Back</button>
+      <h1>Quiz on Important Facts</h1>
+      <button id="startQuiz">Start Quiz</button>
+      <section class="quizArea">
+        <div class="quiz-container">
+          <div id="quiz"></div>
         </div>
-      </div>
+        <div class="quizcontrols">
+          <button id="previous">Previous Question</button>
+          <button id="next">Next Question</button>
+          <button id="submit">Submit Quiz</button>
+        </div>
+      </section>
+      <section class="resultsArea">
+        <div id="results"></div>
+      </section>
     </main>
     <footer class="sticky">
       <p class="footertext">Copyright 2019</p>
