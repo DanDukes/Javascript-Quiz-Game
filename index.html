@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="highscores">
+        <button class="showhighscores">See High Scores</button>
+      </div>
+      <h1>
+        Test Your Knowledge
+      </h1>
+      <div class="timer">
+        <p>Time Left:</p>
+        <span class="countdown"></span>
+      </div>
+    </header>
+    <main class="quiz">
+      <div class="landing">
+        <h2 class="landingtitle">Coding Quiz Challenge</h2>
+        <p class="landingtext">
+          Try to answer the following questions as quickly and correctly as
+          possible. Faster finishing times will result in a higher overall
+          score. Missed questions will subtract 10 seconds from the remaining
+          time.
+        </p>
+      </div>
+      <div class="questions"></div>
+      <div class="score">
+        <p class="scoretext">Current Score:</p>
+        <span class="scorecount"></span>
+      </div>
+      <div class="finished">
+        <h2 class="finishedtitle">All Done</h2>
+        <p class="finishedtext">
+          Please enter your initials to record your score
+        </p>
+        <input type="text" name="initials" id="initials" />
+        <input type="button" value="Submit" />
+      </div>
+      <div class="highscoreshow">
+        <h2 class="scoretitle">High Scores</h2>
+        <div class="scorearea">
+          <ul class="scorelist">
+            <li class="scoreitem"></li>
+          </ul>
+          <button class="clearscores">Clear Scores</button>
+          <button class="goback">Go Back</button>
+        </div>
+      </div>
+    </main>
+    <footer class="sticky">
+      <p class="footertext">Copyright 2019</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
