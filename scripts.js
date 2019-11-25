@@ -1,3 +1,5 @@
+//Define Questions and Answers as an Array of Objects
+
 const myQuestions = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
@@ -87,19 +89,36 @@ const myQuestions = [
   }
 ];
 
+//Define Universal Constants and variables
+const quizContainer = document.getElementById("quiz");
+const resultsContainer = document.getElementById("results");
+const submitButton = document.getElementById("submit");
+const startButton = document.getElementById("startQuiz");
+const startOverButton = document.getElementById("startOver");
+const quizArea = document.getElementById("quizArea");
+const countdown = document.getElementById("countdown");
+const nextButton = document.getElementById("next");
+var timeleft = 90;
+var downloadTimer;
+
+buildQuiz(); //Have to call the function here, as the .answers and .slide classes are placed into the DOM by the function
+const answerContainers = quizContainer.querySelectorAll(".answers");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+let score = 0;
+
+//***************************
+//Functions Section
+//***************************
+
+//Function to assemble the quiz out of the myQuestions Array, puts each questions and answer on its own "slide" div
 function buildQuiz() {
-  // we'll need a place to store the HTML output
   const output = [];
-
-  // for each question...
   myQuestions.forEach((currentQuestion, questionNumber) => {
-    // we'll want to store the list of answer choices
     const answers = [];
-
-    // and for each available answer...
     for (letter in currentQuestion.answers) {
-      // ...add an HTML radio button
       answers.push(
+        // ...add an HTML radio button
         `<label>
              <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
@@ -107,63 +126,45 @@ function buildQuiz() {
            </label>`
       );
     }
-
-    // add this question and its answers to the output
     output.push(
+      // add this question and its answers to the output
       `<div class="slide">
            <div class="question"> ${currentQuestion.question} </div>
            <div class="answers"> ${answers.join("")} </div>
          </div>`
     );
   });
-
-  // finally combine our output list into one string of HTML and put it on the page
-  quizContainer.innerHTML = output.join("");
+  quizContainer.innerHTML = output.join(""); // finally combine our output list into one string of HTML and put it on the page
+}
+//Function to cause the area containing the slides to be visible when the "start quiz" button is pressed
+function showquiz() {
+  quizArea.classList.add("show");
 }
 
-function showResults() {
-  // gather answer containers from our quiz
-  const answerContainers = quizContainer.querySelectorAll(".answers");
-
-  // keep track of user's answers
-  let numCorrect = 0;
-
-  // for each question...
-  myQuestions.forEach((currentQuestion, questionNumber) => {
-    // find selected answer
-    const answerContainer = answerContainers[questionNumber];
-    const selector = `input[name=question${questionNumber}]:checked`;
-    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-    // if answer is correct
-    if (userAnswer === currentQuestion.correctAnswer) {
-      // add to the number of correct answers
-      numCorrect++;
-
-      // color the answers green
-      answerContainers[questionNumber].style.color = "lightgreen";
-    } else {
-      // if answer is wrong or blank
-      // color the answers red
-      answerContainers[questionNumber].style.color = "red";
-    }
-  });
-
-  // show number of correct answers out of total
-  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+//Function to start the countdown clock when the "start quiz" button is pressed
+function startClock() {
+  countdown.innerHTML = "Time Remaining: " + timeleft;
+  if (timeleft <= 0) {
+    stopClock();
+    showResults();
+  } else {
+    timeleft -= timeleft;
+    downloadTimer = setTimeout(startClock, 1000);
+  }
 }
 
+function stopClock() {
+  downloadTimer = clearInterval(downloadTimer);
+  countdown.innerHTML = "Finished";
+  showResults();
+}
+
+//Function to Display the question slides one at at time via adding and removing the "active-slide class"
 function showSlide(n) {
   slides[currentSlide].classList.remove("active-slide");
   slides[n].classList.add("active-slide");
   currentSlide = n;
-
-  if (currentSlide === 0) {
-    previousButton.style.display = "none";
-  } else {
-    previousButton.style.display = "inline-block";
-  }
-
+  //if else logic to only show the submit button on the last slide
   if (currentSlide === slides.length - 1) {
     nextButton.style.display = "none";
     submitButton.style.display = "inline-block";
@@ -177,25 +178,34 @@ function showNextSlide() {
   showSlide(currentSlide + 1);
 }
 
-function showPreviousSlide() {
-  showSlide(currentSlide - 1);
+function showResults() {
+  let numCorrect = 0;
+  myQuestions.forEach((currentQuestion, questionNumber) => {
+    const answerContainer = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    if (userAnswer === currentQuestion.correctAnswer) {
+      numCorrect++;
+    } else {
+      timeleft = timeleft - 10;
+    }
+  });
+  var score = timeleft;
+  resultsContainer.innerHTML = `${numCorrect} out of ${
+    myQuestions.length
+  } Your score is ${score + 1}!`;
+  quizArea.classList.remove("show");
 }
 
-const quizContainer = document.getElementById("quiz");
-const resultsContainer = document.getElementById("results");
-const submitButton = document.getElementById("submit");
+/*function recordScore() {
+  var score = timeleft;
+  clearInterval(downloadTimer);
+  countdown.innerHTML = "Finished";
+}*/
 
-// display quiz right away
-buildQuiz();
-
-const previousButton = document.getElementById("previous");
-const nextButton = document.getElementById("next");
-const slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
-
+//Script Execution Area
 showSlide(0);
-
-// on submit, show results
-submitButton.addEventListener("click", showResults);
-previousButton.addEventListener("click", showPreviousSlide);
+startButton.addEventListener("click", showquiz); //start button shows the quiz area
+startButton.addEventListener("click", startClock);
+submitButton.addEventListener("click", stopClock); // on submit, show results
 nextButton.addEventListener("click", showNextSlide);

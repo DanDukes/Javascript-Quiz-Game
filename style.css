@@ -8,7 +8,7 @@ body{
   text-align: center;
   background-color: #f8f6f0;
 }
-h1{
+h2{
   font-weight: 300;
   margin: 0px;
   padding: 10px;
@@ -44,6 +44,11 @@ button:hover{
     background-color: #38a;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 
 
@@ -65,4 +70,19 @@ button:hover{
   position: relative;
   height: 200px;
   margin-top: 40px;
+}
+
+.quizArea {
+    visibility: hidden;
+    display: none;
+}
+
+.quizArea.show {
+    visibility: visible;
+    display: block;
+}
+
+.quizArea.close {
+    visibility: hidden;
+    display: none;
 }

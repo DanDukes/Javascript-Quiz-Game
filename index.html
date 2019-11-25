@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Quiz Game</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -16,19 +16,18 @@
         Test Your Knowledge
       </h1>
       <div class="timer">
-        <p>Time Left:</p>
-        <span class="countdown"></span>
+        <span id="countdown"></span>
       </div>
     </header>
     <main class="quiz">
-      <h1>Quiz on Important Facts</h1>
+      <h2>Javascript Quick Quiz</h2>
       <button id="startQuiz">Start Quiz</button>
-      <section class="quizArea">
+      <button id="startOver">Start Over</button>
+      <section class="quizArea" id="quizArea">
         <div class="quiz-container">
           <div id="quiz"></div>
         </div>
         <div class="quizcontrols">
-          <button id="previous">Previous Question</button>
           <button id="next">Next Question</button>
           <button id="submit">Submit Quiz</button>
         </div>
