@@ -4,42 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Quiz Game</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div class="highscores">
-        <button class="showhighscores">See High Scores</button>
-      </div>
-      <h1>
-        Test Your Knowledge
-      </h1>
-      <div class="timer">
-        <span id="countdown"></span>
-      </div>
-    </header>
-    <main class="quiz">
-      <h2>Javascript Quick Quiz</h2>
-      <button id="startQuiz">Start Quiz</button>
-      <button id="startOver">Start Over</button>
-      <section class="quizArea" id="quizArea">
-        <div class="quiz-container">
-          <div id="quiz"></div>
-        </div>
-        <div class="quizcontrols">
-          <button id="next">Next Question</button>
-          <button id="submit">Submit Quiz</button>
-        </div>
+    <main class="quizArea">
+      <header class="mainHeader">
+        <h1>Javascript Quiz</h1>
+        <span id="timerArea"></span>
+      </header>
+      <section id="questionsContainer" class="hide">
+        <div id="question"></div>
+        <div id="answers" class="buttonArea"></div>
       </section>
-      <section class="resultsArea">
-        <div id="results"></div>
+      <section class="controls">
+        <button class="start" id="startButton">START</button>
+        <br />
+        <div id="scoreArea" class="hide">
+          <span id="scoreDisplay"></span>
+          <input type="text" name="initials" id="initials" />
+          <button id="submitScore" class="submit">Submit Score</button>
+        </div>
       </section>
     </main>
-    <footer class="sticky">
-      <p class="footertext">Copyright 2019</p>
-    </footer>
-
-    <script src="scripts.js"></script>
+    <script src="newscript.js"></script>
   </body>
 </html>
