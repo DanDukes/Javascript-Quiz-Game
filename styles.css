@@ -63,3 +63,8 @@ button:hover {
 .hide {
   display: none;
 }
+
+.scoresList {
+  text-decoration: none;
+  list-style-type: none;
+}
