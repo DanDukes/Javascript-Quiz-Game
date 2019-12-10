@@ -28,6 +28,8 @@ This is a simple web app, point and click to navigate in browser.  The Quiz will
 
 The user can also check the list of high scores saved in local memory before playing the game.
 
+![Image of Game](https://octodex.github.com/images/yaktocat.png)
+
 
 ## Credits
  
