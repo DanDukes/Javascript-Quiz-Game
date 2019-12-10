@@ -28,7 +28,7 @@ This is a simple web app, point and click to navigate in browser.  The Quiz will
 
 The user can also check the list of high scores saved in local memory before playing the game.
 ![Image of Game](https://github.com/DanDukes/homework_4/blob/master/Initial.png)
-![Image of Game](https://github.com/DanDukes/homework_4/blob/master/QuizQuestions.png)
+![Image of Game](https://github.com/DanDukes/homework_4/blob/master/quizQuestions.png)
 ![Image of Game](https://github.com/DanDukes/homework_4/blob/master/HighScores.png)
 
 
