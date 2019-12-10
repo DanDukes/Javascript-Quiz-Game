@@ -17,9 +17,19 @@ body {
   background-color: #68b0d9;
 }
 
+h3 {
+  margin: 10px 0px;
+}
+
+.mainHeader {
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid grey;
+}
+
 .quizArea {
   width: 60vw;
-  max-width: 80%;
+  max-width: 90%;
   background-color: white;
   border-radius: 5px;
   padding: 10px;
@@ -51,6 +61,7 @@ button:hover {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 20px;
+  margin: 10px 0px;
 }
 
 .controls {
@@ -67,4 +78,39 @@ button:hover {
 .scoresList {
   text-decoration: none;
   list-style-type: none;
+  margin: 0.3rem 0;
+}
+
+#highScoresList {
+  margin: 1rem 0;
+}
+
+#scoreArea {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid grey;
+}
+
+#init {
+  margin-top: 0.7rem;
+}
+#initials {
+  margin: 0.3rem;
+}
+
+#save-btn {
+  margin: 0.7rem;
+}
+
+#showScoresButton {
+  margin-top: 0.3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .buttonArea {
+    display: grid;
+    grid-template-columns: none;
+    gap: 10px;
+    margin: 20px 0;
+  }
 }
