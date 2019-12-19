@@ -1,6 +1,6 @@
 # homework_4
 javascript Quiz Game with Local Storage of Scores
-
+https://dandukes.github.io/homework_4/
 ## Description 
 
 This is a simple one page web app built to run a quiz, including a timer and score tracking and storage in Local memory.
@@ -27,9 +27,9 @@ To install, copy and paste all files onto a server and point the server root at 
 This is a simple web app, point and click to navigate in browser.  The Quiz will run through the set of questions while tracking time to completion.  Upon reaching the end of the question set or running out of time, the game over logic will run, showing the user's score for the current session, and allowing them to save the score to local memory if desired.  
 
 The user can also check the list of high scores saved in local memory before playing the game.
-![Image of Game](https://github.com/DanDukes/homework_4/blob/master/Intitial.png)
-![Image of Game](https://github.com/DanDukes/homework_4/blob/master/quizQuestions.png)
-![Image of Game](https://github.com/DanDukes/homework_4/blob/master/HighScores.png)
+![Image of Game](https://github.com/DanDukes/homework_4/blob/master/assets/images/Intitial.png)
+![Image of Game](https://github.com/DanDukes/homework_4/blob/master/assets/images/quizQuestions.png)
+![Image of Game](https://github.com/DanDukes/homework_4/blob/master/assets/images/HighScores.png)
 
 
 ## Credits
