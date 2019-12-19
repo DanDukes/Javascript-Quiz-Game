@@ -74,6 +74,7 @@ function startClock() {
 function selectAnswer(e) {
   const selectedButton = e.target;
   if (!selectedButton.dataset.correct) {
+    timer = timer - 10;
     score = score - 10;
   }
   if (qNumber == questions.length - 1) {
