@@ -1,6 +1,8 @@
 # homework_4
 javascript Quiz Game with Local Storage of Scores
+
 https://dandukes.github.io/homework_4/
+
 ## Description 
 
 This is a simple one page web app built to run a quiz, including a timer and score tracking and storage in Local memory.
