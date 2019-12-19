@@ -112,6 +112,9 @@ function gameOver() {
 
 function showResults() {
   finalScore = timer + score;
+  if (finalScore < 0) {
+    finalScore = 0;
+  }
   qElement.innerText = "";
   scoreArea.classList.remove("hide");
   answerButtons.classList.add("hide");
