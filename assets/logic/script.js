@@ -75,7 +75,6 @@ function selectAnswer(e) {
   const selectedButton = e.target;
   if (!selectedButton.dataset.correct) {
     timer = timer - 10;
-    score = score - 10;
     console.log(timer);
   }
   if (qNumber == questions.length - 1) {
@@ -111,7 +110,7 @@ function gameOver() {
 }
 
 function showResults() {
-  finalScore = timer + score;
+  finalScore = timer;
   if (finalScore < 0) {
     finalScore = 0;
   }
