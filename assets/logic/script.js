@@ -76,6 +76,7 @@ function selectAnswer(e) {
   if (!selectedButton.dataset.correct) {
     timer = timer - 10;
     score = score - 10;
+    console.log(timer);
   }
   if (qNumber == questions.length - 1) {
     gameOver();
